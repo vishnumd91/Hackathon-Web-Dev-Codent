@@ -1,0 +1,19 @@
+{
+  "name": "knowledgehut-js-starter",
+  "version": "2.0.1",
+  "description": "A starter kit for building web applications by KnowledgeHut upGrad for the JavaScript and FullStack Programs",
+  "scripts": {
+    "dev": "npx vite serve --host",
+    "build": "npx vite build --emptyOutDir",
+    "preview": "npx vite preview --host"
+  },
+  "author": "Sachin Bhatnagar <sachin@knowledgehut.co> (https://www.knowledgehut.com)",
+  "license": "AFL-3.0",
+  "devDependencies": {
+    "msw": "^0.47.4",
+    "vite": "^3.2.3"
+  },
+  "msw": {
+    "workerDirectory": "src/public"
+  }
+}

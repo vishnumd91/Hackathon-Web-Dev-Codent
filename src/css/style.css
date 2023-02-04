@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin: 4px;
+}
+
+code {
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: rgb(219, 219, 219);
+  padding: 2px;
+}
+
+#api-status {
+  margin-top: 100px;
+  font-family: monospace;
+  text-align: center;
+  font-size: 1rem;
+  background-color: rgb(219, 219, 219);
+  padding: 10px;
+}
