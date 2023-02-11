@@ -1,0 +1,74 @@
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+  }
+}
+.container1 {
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.container {
+  width: 50%;
+  margin: 0 auto;
+  background-color: beige;
+  box-shadow: 0 0 5px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  text-align: center;
+}
+.questionNumber {
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  color: #f27813;
+}
+.content {
+  display: flex;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid black;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 8px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.input1 {
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.controls button {
+  font-size: medium;
+  font-weight: bold;
+  box-shadow: 0 6px 12px -2px rgba(#f27813, 0.15);
+  background: #ef9614;
+  border-radius: 4px;
+  padding: 10px;
+  color: beige;
+  margin: 6px;
+  cursor: pointer;
+}
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap;
+}
