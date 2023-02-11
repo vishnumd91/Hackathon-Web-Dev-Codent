@@ -28,3 +28,35 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
+/* RESULT PAGE STUFF */
+
+#header {
+  width: 100;
+  display: flex;
+  justify-content: center;
+}
+
+h4 {
+  align-items: center;
+}
+
+#containerResult {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#answers {
+  padding: 5%;
+  align-items: center;
+  border: 2px solid red;
+}
+
+#quote {
+
+  align-items: center;
+  border: 2px solid red;
+}
