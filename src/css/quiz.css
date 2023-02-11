@@ -1,3 +1,6 @@
+body {
+  background-color: #e3e3e3;
+}
 @media only screen and (max-width: 600px) {
   .container {
     width: 80%;
@@ -16,7 +19,7 @@
 .container {
   width: 50%;
   margin: 0 auto;
-  background-color: beige;
+  background-color: #e3e3e3;
   box-shadow: 0 0 5px 4px;
   display: flex;
   flex-direction: column;
@@ -29,7 +32,8 @@
   padding: 10px;
   font-size: large;
   font-weight: bold;
-  color: #f27813;
+  color: #f95959;
+  margin: 14px;
 }
 .content {
   display: flex;
@@ -41,7 +45,7 @@
 .options {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 31px;
   width: 80%;
   border-radius: 8px;
   padding: 10px;
@@ -55,20 +59,35 @@
   gap: 5px;
 }
 .controls button {
-  font-size: medium;
-  font-weight: bold;
-  box-shadow: 0 6px 12px -2px rgba(#f27813, 0.15);
-  background: #ef9614;
-  border-radius: 4px;
-  padding: 10px;
-  color: beige;
-  margin: 6px;
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 38px 62px;
   cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
-.controls{
+.controls {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   flex-wrap: wrap;
+}
+
+/* btn-pri button */
+
+.controls button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.controls button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
