@@ -54,6 +54,7 @@ function previous() {
 
   currentQuestionIndex--;
   displayQuestion();
+  nextButton.style.display = "inline-block";
 }
 
 // Next Button
