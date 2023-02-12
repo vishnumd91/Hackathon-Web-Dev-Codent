@@ -18,27 +18,24 @@ const currentQuestionElement = document.getElementById("currentQuestion");
 const previousButton = document.getElementById("previous");
 const nextButton = document.getElementById("next");
 const submitButton = document.getElementById("submit");
-const musicButton = document.getElementById("musicType");
-const artButton = document.getElementById("artType");
-const codingButton = document.getElementById("codingType");
-
-const updatedScore = document.getElementById("updatedScore");
-const resultValue = localStorage.getItem("score");
-
-updatedScore.innerText = `Total questions answered correctly: ${resultValue}`;
+// const musicButton = document.getElementById("musicType");
+// const artButton = document.getElementById("artType");
+// const codingButton = document.getElementById("codingType");
 
 previousButton.style.display = "none";
 submitButton.style.display = "none";
 currentQuestionElement.innerText = currentQuestionCount;
+
+// const resultValue = localStorage.getItem("score");
+// const updatedScore = document.getElementById("updatedScore");
+// updatedScore.innerText = `Total questions answered correctly: ${resultValue}`;
+// console.log(updatedScore);
 
 previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
 submitButton.addEventListener("click", submit);
 let scoreValue = 0;
 let radioButtons;
-// rightAnswers.innerText = localStorage.getItem("score");
-
-// const score = localStorage.setItem("score", scoreValue);
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   musicButton.addEventListener("click", mapToQuizTypes("music"));
@@ -48,7 +45,6 @@ let radioButtons;
 
 // // Data Selection
 // function mapToQuizTypes(quizType) {
-//   console.log("hell");
 //   location.href = "quiz.html";
 //   switch (quizType) {
 //     case "music":
@@ -71,18 +67,16 @@ function displayQuestion() {
   totalQuestionElement.innerText = quizData.length;
   const optionsHTML = currentQuestion.options
     .map((choice, index, answer) => {
-      console.log("answer", answer === currentQuestion.answer);
       return `<div class="input1">
       <input class="radioInput" id="option${index}" type="radio" name="options" value=${choice
         .split(" ")
         .join("")} />
-              <label for="option${index}">${choice}</label>
-              </div>`;
+        <label for="option${index}">${choice}</label>
+        </div>`;
     })
     .join("");
   choiceElement.innerHTML = optionsHTML;
   checkAnswer();
-  console.log("check", scoreValue);
 }
 
 displayQuestion();
@@ -158,5 +152,4 @@ function submit() {
   previousButton.style.display = "none";
   nextButton.style.display = "none";
   location.href = "result.html";
-  console.log(submitButton);
 }
