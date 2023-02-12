@@ -1,6 +1,10 @@
-import quizData from "../data/dataset.json" assert { type: "json" };
+import data from "../data/dataset.json" assert { type: "json" };
 
-const { music, coding, "modern-art": modern_art } = quizData;
+const { music, coding, "modern-art": modern_art } = data;
+
+let quizData;
+
+quizData = [...music];
 
 let currentQuestionIndex = 0;
 let currentQuestionCount = 1;
@@ -25,9 +29,9 @@ submitButton.addEventListener("click", submit);
 
 // Display the Question
 function displayQuestion() {
-  const currentQuestion = music[currentQuestionIndex];
+  const currentQuestion = quizData[currentQuestionIndex];
   questionContainer.innerText = currentQuestion.question;
-  totalQuestionElement.innerText = music.length;
+  totalQuestionElement.innerText = quizData.length;
   const optionsHTML = currentQuestion.options
     .map((choice, index) => {
       return `<div class="input1">
@@ -48,6 +52,7 @@ function previous() {
     previousButton.style.display = "none";
   } else {
     previousButton.style.display = "inline-block";
+    submitButton.style.display = "none";
   }
   currentQuestionCount--;
   currentQuestionElement.innerText = currentQuestionCount;
@@ -59,8 +64,9 @@ function previous() {
 
 // Next Button
 function next() {
-  if (currentQuestionIndex === music.length - 2) {
+  if (currentQuestionIndex === quizData.length - 2) {
     nextButton.style.display = "none";
+    submitButton.style.display = "inline-block";
   } else {
     nextButton.style.display = "inline-block";
   }
@@ -76,6 +82,7 @@ function next() {
 function submit() {
   previousButton.style.display = "none";
   nextButton.style.display = "none";
+  location.href = "result.html";
   console.log(submitButton);
 }
 
