@@ -21,7 +21,11 @@ const submitButton = document.getElementById("submit");
 const musicButton = document.getElementById("musicType");
 const artButton = document.getElementById("artType");
 const codingButton = document.getElementById("codingType");
-const rightAnswers = document.getElementById("rightAnswers");
+
+const updatedScore = document.getElementById("updatedScore");
+const resultValue = localStorage.getItem("score");
+
+updatedScore.innerText = `Total questions answered correctly: ${resultValue}`;
 
 previousButton.style.display = "none";
 submitButton.style.display = "none";
@@ -32,9 +36,7 @@ nextButton.addEventListener("click", next);
 submitButton.addEventListener("click", submit);
 let scoreValue = 0;
 let radioButtons;
-rightAnswers.innerText = localStorage.getItem("score");
-
-console.log(rightAnswers);
+// rightAnswers.innerText = localStorage.getItem("score");
 
 // const score = localStorage.setItem("score", scoreValue);
 
@@ -114,8 +116,8 @@ function checkAnswer() {
 function saveScore(score) {
   localStorage.setItem("score", score);
 }
-function saveWrongAnswers(input) {
-  localStorage.setItem("wrongAnswers", wrongAnswers);
+function saveWrongAnswers(wrongAnswer) {
+  localStorage.setItem("wrongAnswers", wrongAnswer);
 }
 
 // Previous Button
