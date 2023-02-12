@@ -4,7 +4,7 @@
   "description": "A starter kit for building web applications by KnowledgeHut upGrad for the JavaScript and FullStack Programs",
   "scripts": {
     "dev": "npx vite serve --host",
-    "build": "npx vite build --emptyOutDir",
+    "build": "npx vite build --emptyOutDir && cp dist/index.html dist/200.html",
     "preview": "npx vite preview --host"
   },
   "author": "Sachin Bhatnagar <sachin@knowledgehut.co> (https://www.knowledgehut.com)",
