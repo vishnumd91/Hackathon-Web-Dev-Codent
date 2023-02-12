@@ -21,8 +21,7 @@ const submitButton = document.getElementById("submit");
 const musicButton = document.getElementById("musicType");
 const artButton = document.getElementById("artType");
 const codingButton = document.getElementById("codingType");
-
-console.log(musicButton);
+const rightAnswers = document.getElementById("rightAnswers");
 
 previousButton.style.display = "none";
 submitButton.style.display = "none";
@@ -32,8 +31,12 @@ previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
 submitButton.addEventListener("click", submit);
 let scoreValue = 0;
+let radioButtons;
+rightAnswers.innerText = localStorage.getItem("score");
 
-const score = localStorage.setItem("score", scoreValue);
+console.log(rightAnswers);
+
+// const score = localStorage.setItem("score", scoreValue);
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   musicButton.addEventListener("click", mapToQuizTypes("music"));
@@ -68,32 +71,51 @@ function displayQuestion() {
     .map((choice, index, answer) => {
       console.log("answer", answer === currentQuestion.answer);
       return `<div class="input1">
-              <input class="radioInput" id="option${index}" type="radio" name="options" value=${choice
+      <input class="radioInput" id="option${index}" type="radio" name="options" value=${choice
         .split(" ")
         .join("")} />
               <label for="option${index}">${choice}</label>
-            </div>`;
+              </div>`;
     })
     .join("");
   choiceElement.innerHTML = optionsHTML;
   checkAnswer();
+  console.log("check", scoreValue);
 }
 
 displayQuestion();
 
 // Check for the selected option
 function checkAnswer() {
-  const radioButtons = document.querySelectorAll('input[type="radio"]');
-  radioButtons.forEach((button) => {
+  radioButtons = document.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach((button, index) => {
     button.addEventListener("change", function () {
       const selectedOption = document.querySelector(
         'input[name="options"]:checked'
       ).value;
-      if (selectedOption === currentQuestion.answer.replace(/ /g, "")) {
+      const changeAnswerFormat = currentQuestion.answer.replace(/ /g, "");
+      if (selectedOption && selectedOption === changeAnswerFormat) {
         scoreValue++;
+        // if (radioButtons[index].checked) {
+        //   radioButtons.forEach((radio) => {
+        //     radio.disabled = true;
+        //   });
+        // }
+        saveScore(scoreValue);
+      } else {
+        wrongAnswers++;
+        saveWrongAnswers(wrongAnswers);
       }
     });
   });
+}
+
+// Save score in local storage
+function saveScore(score) {
+  localStorage.setItem("score", score);
+}
+function saveWrongAnswers(input) {
+  localStorage.setItem("wrongAnswers", wrongAnswers);
 }
 
 // Previous Button
@@ -128,7 +150,6 @@ function next() {
   displayQuestion();
 
   previousButton.style.display = "inline-block";
-  console.log(currentQuestionIndex);
 }
 // Submit Button
 function submit() {
@@ -137,7 +158,3 @@ function submit() {
   location.href = "result.html";
   console.log(submitButton);
 }
-
-// Score Check
-
-// Loacal Storage for results
